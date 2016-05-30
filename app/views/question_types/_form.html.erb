@@ -1,0 +1,14 @@
+<%= simple_form_for(@question_type) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :rating_scale %>
+    <%= f.input :rating_scale_start %>
+    <%= f.input :rating_scale_end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

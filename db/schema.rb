@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160530011248) do
+ActiveRecord::Schema.define(version: 20160530012342) do
+
+  create_table "question_types", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "rating_scale"
+    t.integer  "rating_scale_start"
+    t.integer  "rating_scale_end"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
 
   create_table "surveys", force: :cascade do |t|
     t.string   "name"

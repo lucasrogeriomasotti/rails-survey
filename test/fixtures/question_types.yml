@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  rating_scale: false
+  rating_scale_start: 1
+  rating_scale_end: 1
+
+two:
+  name: MyString
+  rating_scale: false
+  rating_scale_start: 1
+  rating_scale_end: 1
