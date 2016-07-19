@@ -1,17 +1,21 @@
-<p>
-  <strong><%= t('name') %>:</strong>
-  <%= @survey.name %>
-</p>
+<div class="row">
+	<div class="col-sm-12">
+		<p>
+		  <strong><%= t('name') %>:</strong>
+		  <%= @survey.name %>
+		</p>
 
-<p>
-  <strong><%= t('start_date') %>:</strong>
-  <%= @survey.start_date %>
-</p>
+		<p>
+		  <strong><%= t('start_date') %>:</strong>
+		  <%= @survey.start_date %>
+		</p>
 
-<p>
-  <strong><%= t('end_date') %>:</strong>
-  <%= @survey.end_date %>
-</p>
+		<p>
+		  <strong><%= t('end_date') %>:</strong>
+		  <%= @survey.end_date %>
+		</p>
 
-<%= link_to t('edit'), edit_survey_path(@survey), class: 'btn btn-primary' %>
-<%= link_to t('back'), surveys_path, class: 'btn btn-primary' %>
+		<%= link_to t('edit'), edit_survey_path(@survey), class: 'btn btn-primary' %>
+		<%= link_to t('back'), surveys_path, class: 'btn btn-primary' %>
+	</div>
+</div>

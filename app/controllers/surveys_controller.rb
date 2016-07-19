@@ -30,7 +30,7 @@ class SurveysController < ApplicationController
 
     respond_to do |format|
       if @survey.save
-        format.html { redirect_to @survey, notice: 'Survey was successfully created.' }
+        format.html { redirect_to surveys_path, notice: 'Survey was successfully created.' }
         format.json { render :show, status: :created, location: @survey }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class SurveysController < ApplicationController
   def update
     respond_to do |format|
       if @survey.update(survey_params)
-        format.html { redirect_to @survey, notice: 'Survey was successfully updated.' }
+        format.html { redirect_to surveys_path, notice: 'Survey was successfully updated.' }
         format.json { render :show, status: :ok, location: @survey }
       else
         format.html { render :edit }

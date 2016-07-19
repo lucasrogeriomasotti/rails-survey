@@ -1,5 +1,11 @@
-<h1><%= t('new_survey') %></h1>
+<div class="row">
+	<div class="col-sm-3"></div>
+	<div class="col-sm-6">
+		<h1><%= t('new_survey') %></h1>
 
-<%= render 'form' %>
+		<%= render 'form' %>
 
-<%= link_to t('back'), surveys_path %>
+		<%= link_to t('back'), surveys_path %>
+	</div>
+	<div class="col-sm-3"></div>
+</div>
