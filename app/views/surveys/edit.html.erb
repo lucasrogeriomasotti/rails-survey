@@ -1,6 +1,5 @@
-<h1>Editing Survey</h1>
+<h1><%= t('editing_survey') %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @survey %> |
-<%= link_to 'Back', surveys_path %>
+<%= link_to t('back'), surveys_path %>

@@ -1,19 +1,17 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
+  <strong><%= t('name') %>:</strong>
   <%= @survey.name %>
 </p>
 
 <p>
-  <strong>Start date:</strong>
+  <strong><%= t('start_date') %>:</strong>
   <%= @survey.start_date %>
 </p>
 
 <p>
-  <strong>End date:</strong>
+  <strong><%= t('end_date') %>:</strong>
   <%= @survey.end_date %>
 </p>
 
-<%= link_to 'Edit', edit_survey_path(@survey) %> |
-<%= link_to 'Back', surveys_path %>
+<%= link_to t('edit'), edit_survey_path(@survey), class: 'btn btn-primary' %>
+<%= link_to t('back'), surveys_path, class: 'btn btn-primary' %>

@@ -1,4 +1,17 @@
 pt-BR:
+  new_survey: 'Novo Questionário'
+  editing_survey: 'Editando Questionário'
+  surveys: 'Question'
+  name: 'Nome'
+  start_date: 'Data de início'
+  end_date: 'Data de fim'
+
+  show: 'Visualizar'
+  edit: 'Editar'
+  destroy: 'Remover'
+  confirmation: 'Você tem certeza?'
+
+  back: 'Voltar'
   activerecord:
     errors:
       messages:
@@ -10,9 +23,16 @@ pt-BR:
       user:
         one: 'Usuário'
         other: 'Usuários'
+      survey:
+        one: 'Questionário'
+        other: 'Questionários'
     attributes:
       user:
-        sex: 'Sexo'
+        name: 'Nome'
+      survey:
+        name: 'Nome'
+        start_date: 'Data de início'
+        end_date: 'Data de fim'
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
