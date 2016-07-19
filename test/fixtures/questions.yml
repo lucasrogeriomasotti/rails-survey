@@ -2,10 +2,8 @@
 
 one:
   description: MyString
-  question_type_id: 
   survey_id: 
 
 two:
   description: MyString
-  question_type_id: 
   survey_id: 
