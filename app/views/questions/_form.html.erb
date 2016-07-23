@@ -5,7 +5,6 @@
   	<%= f.input :question_text %>
   	<%= f.input :question_type, collection: Question.question_types.keys, include_blank: false, label_method: lambda {|type| t(type) } %>
   	<%= f.input :answer_options, as: :text %>
-    <%= f.input :description, as: :text %>
     <%= f.input :position %>
   </div>
 
