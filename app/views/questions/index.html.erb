@@ -7,8 +7,8 @@
         <tr>
           <th><%= t('question_text') %></th>
           <th><%= t('question_type') %></th>
-          <th><%= t('question_position') %></th>
           <th><%= t('answer_options') %></th>
+          <th><%= t('question_position') %></th>
           <th></th>
         </tr>
       </thead>
@@ -17,7 +17,7 @@
         <% @questions.each do |question| %>
           <tr>
             <td><%= question.question_text %></td>
-            <td><%= question.question_type %></td>
+            <td><%= t(question.question_type) %></td>
             <td><%= question.answer_options %></td>
             <td><%= question.position %></td>
             <td class="actions-td">
@@ -28,9 +28,9 @@
         <% end %>
       </tbody>
     </table>
-
-    <br>
-
     <%= link_to t('new_question'), new_survey_question_path, class: 'btn btn-primary' %>
+    <br />
+    <br />
+    <%= link_to t('back'), surveys_path, class: 'btn btn-primary' %>
   </div>
 </div>
