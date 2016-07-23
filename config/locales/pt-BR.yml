@@ -1,7 +1,7 @@
 pt-BR:
   new_survey: 'Novo Questionário'
   editing_survey: 'Editando Questionário'
-  surveys: 'Question'
+  surveys: 'Questionários'
   name: 'Nome'
   start_date: 'Data de início'
   end_date: 'Data de fim'
@@ -21,6 +21,21 @@ pt-BR:
   edit: 'Editar'
   destroy: 'Remover'
   confirmation: 'Você tem certeza?'
+
+  leave_fields_blank: 'Deixe estes campos em branco se você não quer alterar sua senha.'
+
+  password: 'Senha'
+  password_confirmation: 'Confirmação da senha'
+  current_password: 'Senha atual'
+  update: 'Atualizar'
+  enter_current_password: 'Você precisa digitar sua senha atual para fazer alterações.'
+  edit_user: 'Editar Usuário'
+  edit_account: 'Editar conta'
+  sign_out: 'Sair'
+  sign_in: 'Login'
+  users: 'Usuários'
+  forgot_password: 'Esqueceu sua senha?'
+  remember_me: 'Lembrar'
 
   back: 'Voltar'
   activerecord:

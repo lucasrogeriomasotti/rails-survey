@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+  leave_fields_blank: "Leave these fields blank if you don't want to change your password."
+  enter_current_password: "You must enter your current password to make changes."
+  forgot_password: 'Forgot password?'
