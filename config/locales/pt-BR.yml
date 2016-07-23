@@ -6,6 +6,17 @@ pt-BR:
   start_date: 'Data de início'
   end_date: 'Data de fim'
 
+  new_question: 'Nova pergunta'
+  editing_question: 'Editando Pergunta' 
+  question_text: 'Texto da pergunta'
+  question_position: 'Posição'
+  question_type: 'Tipo'
+  answer_options: 'Opções de resposta'
+  text: 'Texto'
+  single_choice: 'Escolha única'
+  multiple_choice: 'Múltipla escolha'
+  rating_scale: 'Escala'
+
   show: 'Visualizar'
   edit: 'Editar'
   destroy: 'Remover'
@@ -26,6 +37,9 @@ pt-BR:
       survey:
         one: 'Questionário'
         other: 'Questionários'
+      question:
+        one: 'Pergunta'
+        other: 'Perguntas'
     attributes:
       user:
         name: 'Nome'
@@ -33,6 +47,11 @@ pt-BR:
         name: 'Nome'
         start_date: 'Data de início'
         end_date: 'Data de fim'
+      question:
+        question_text: 'Texto da pergunta'
+        question_type: 'Tipo'
+        answer_options: 'Opções de resposta'
+        position: 'Posição'
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

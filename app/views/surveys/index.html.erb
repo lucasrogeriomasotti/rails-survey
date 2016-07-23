@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-sm-12">
-    <h1><%= Survey.model_name.human.pluralize %></h1>
+    <h1><%= Survey.model_name.human(count: 2).pluralize %></h1>
     <br />
     <table class="table table-striped table-bordered">
       <thead>
@@ -16,8 +16,8 @@
         <% @surveys.each do |survey| %>
           <tr>
             <td><%= survey.name %></td>
-            <td><%= survey.start_date %></td>
-            <td><%= survey.end_date %></td>
+            <td><%= l(survey.start_date) %></td>
+            <td><%= l(survey.end_date) %></td>
             <td class="actions-td">
               <%= link_to t('edit'), edit_survey_path(survey), class: 'btn btn-primary' %>
               <%= link_to t('destroy'), survey, method: :delete, data: { confirm: t('confirmation') }, class: 'btn btn-danger' %>

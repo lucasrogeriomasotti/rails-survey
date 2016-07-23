@@ -1,29 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-sm-12">
+    <h1><%= Question.model_name.human(count: 2).pluralize %></h1>
+    <br />
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th><%= t('question_text') %></th>
+          <th><%= t('question_type') %></th>
+          <th><%= t('question_position') %></th>
+          <th><%= t('answer_options') %></th>
+          <th></th>
+        </tr>
+      </thead>
 
-<h1>Listing Questions</h1>
+      <tbody>
+        <% @questions.each do |question| %>
+          <tr>
+            <td><%= question.question_text %></td>
+            <td><%= question.question_type %></td>
+            <td><%= question.answer_options %></td>
+            <td><%= question.position %></td>
+            <td class="actions-td">
+              <%= link_to t('edit'), edit_question_path(question), class: 'btn btn-primary' %>
+              <%= link_to t('destroy'), question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Survey</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <br>
 
-  <tbody>
-    <% @questions.each do |question| %>
-      <tr>
-        <td><%= question.description %></td>
-        <td><%= question.survey %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Question', new_question_path %>
+    <%= link_to t('new_question'), new_survey_question_path, class: 'btn btn-primary' %>
+  </div>
+</div>
