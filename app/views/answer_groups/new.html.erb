@@ -1,15 +1,12 @@
-<%= simple_form_for [@survey, @answer_group] do |f| %>
-  <%= f.error_notification %>
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+  	<h1><%= @survey.name %></h1>
+  	<br/>
+  	
+    <%= render 'form' %>
 
-  <div class="form-inputs">
-    <% @answers.each do |answer| %>
-	  	<%= f.fields_for("#{answer.question.id}", answer) do |answer_form| %>
-	      <%= render_answer_form(answer, answer_form) %>
-	    <% end %>
-    <% end %>
+    <%= link_to t('back'), surveys_path %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-primary' %>
-  </div>
-<% end %>
+  <div class="col-sm-3"></div>
+</div>

@@ -1,0 +1,17 @@
+<%= simple_form_for [@survey, @answer_group] do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <% @answers.each do |answer| %>
+      <div class="form-group">
+  	  	<%= f.fields_for("#{answer.question.id}", answer) do |answer_form| %>
+  	      <%= render_answer_form(answer, answer_form) %>
+  	    <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, t('answer_survey'), class: 'btn btn-primary' %>
+  </div>
+<% end %>
