@@ -1,12 +1,16 @@
 class SurveysController < ApplicationController
   before_action :authenticate_user!
-  before_action :admin_only
+  before_action :admin_only, except: [:index]
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
 
   # GET /surveys
   # GET /surveys.json
   def index
-    @surveys = Survey.all
+    if(current_user.admin?) 
+      @surveys = Survey.all
+    else
+      @surveys = Survey.all
+    end
   end
 
   # GET /surveys/1

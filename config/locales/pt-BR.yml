@@ -37,6 +37,10 @@ pt-BR:
   forgot_password: 'Esqueceu sua senha?'
   remember_me: 'Lembrar'
 
+  answer: 'Responder'
+
+  answers_saved: 'Suas respostas foram salvas!'
+
   back: 'Voltar'
   activerecord:
     errors:
