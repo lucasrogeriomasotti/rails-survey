@@ -42,6 +42,9 @@ pt-BR:
 
   answers_saved: 'Suas respostas foram salvas!'
 
+  results: 'Resultados'
+  no_answers: 'Sem respostas.'
+
   back: 'Voltar'
   activerecord:
     errors:

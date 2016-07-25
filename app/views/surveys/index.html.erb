@@ -21,6 +21,7 @@
             <td class="actions-td">
             <% if(current_user.admin?) %>
               <%= link_to t('edit'), edit_survey_path(survey), class: 'btn btn-primary' %>
+              <%= link_to t('results'), survey_results_path(survey), class: 'btn btn-primary' %>
               <%= link_to t('destroy'), survey, method: :delete, data: { confirm: t('confirmation') }, class: 'btn btn-danger' %>
             <% else %>
               <%= link_to t('answer'), new_survey_answer_group_path(survey), class: 'btn btn-primary' %>

@@ -1,0 +1,16 @@
+<h1><%= t('results') %>
+<ol>
+	<% @survey.questions.each do |question| %>
+		<li class="list-group">
+			<b><%= question.question_text %></b>
+			<ul>
+				<% question.answers.each do |answer| %>
+					<li><%= answer.answer_text %></li>
+				<% end %>
+				<% if question.answers.empty? %>
+					<li><%= t('no_answers') %></li>
+				<% end %>
+			</ul>
+		</li>
+	<% end %>
+</ol>
