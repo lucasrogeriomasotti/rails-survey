@@ -12,5 +12,8 @@
 				<% end %>
 			</ul>
 		</li>
+		<% if question.options.any? %>
+			<%= bar_chart get_graph_data(question), get_graph_options %>
+		<% end %>
 	<% end %>
 </ol>

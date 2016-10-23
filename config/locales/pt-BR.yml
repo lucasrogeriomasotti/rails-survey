@@ -47,6 +47,8 @@ pt-BR:
 
   destroy_related_answers: 'Apagar respostas'
 
+  answers: 'Respostas'
+
   back: 'Voltar'
   activerecord:
     errors:
