@@ -1,5 +1,5 @@
 class Survey < ActiveRecord::Base
-  has_many :questions
+  has_many :questions, dependent: :restrict_with_error
 
   def user_can_answer? user
   	true
