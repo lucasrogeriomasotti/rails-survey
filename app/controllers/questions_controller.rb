@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!
   before_action :admin_only
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :set_question, only: [:show, :edit, :update, :destroy, :destroy_answers]
   before_action :set_survey, only: [:new, :create]
 
   # GET /questions
@@ -68,6 +68,15 @@ class QuestionsController < ApplicationController
         format.html { redirect_to survey_questions_url(@survey), alert: 'Error when trying to destroy question. Check for dependent records.' }
         format.json { render json: @question.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def destroy_answers
+    @survey = @question.survey
+    @question.answers.destroy_all
+    respond_to do |format|
+      format.html { redirect_to survey_questions_url(@survey), notice: 'Related answers were successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 

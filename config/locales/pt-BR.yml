@@ -45,6 +45,8 @@ pt-BR:
   results: 'Resultados'
   no_answers: 'Sem respostas.'
 
+  destroy_related_answers: 'Apagar respostas'
+
   back: 'Voltar'
   activerecord:
     errors:

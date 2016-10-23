@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   	resources :answer_groups, only: [:new, :create]
   end
   get 'surveys/:id/results', to: 'surveys#results', as: :survey_results
+  get 'questions/:id/destroy_answers', to: 'questions#destroy_answers', as: :destroy_question_answers
   
   root to: 'visitors#index'
   get 'users/sign_up' => redirect('/404.html')

@@ -20,9 +20,10 @@
             <td><%= t(question.question_type) %></td>
             <td><%= question.answer_options %></td>
             <td><%= question.position %></td>
-            <td class="actions-td">
+            <td class="actions-td" style="width: 350px;">
               <%= link_to t('edit'), edit_question_path(question), class: 'btn btn-primary' %>
               <%= link_to t('destroy'), question, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+              <%= link_to t('destroy_related_answers'), destroy_question_answers_path(question), data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
             </td>
           </tr>
         <% end %>
