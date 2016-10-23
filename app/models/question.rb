@@ -4,4 +4,10 @@ class Question < ActiveRecord::Base
   has_many :answers
   default_scope { order(:position) }
   validates :survey, :question_text, presence: true
+
+  ANSWER_OPTIONS_DELIMITER = "\r\n"
+
+  def options
+    answer_options.split(ANSWER_OPTIONS_DELIMITER)
+  end
 end
