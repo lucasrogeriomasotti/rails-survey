@@ -66,7 +66,7 @@ class SurveysController < ApplicationController
         format.json { head :no_content }
       else
         format.html { redirect_to surveys_url, alert: 'Error when trying to destroy survey. Check for dependent records.' }
-        format.json { head :no_content }
+        format.json { render json: @survey.errors, status: :unprocessable_entity }
       end
     end
   end

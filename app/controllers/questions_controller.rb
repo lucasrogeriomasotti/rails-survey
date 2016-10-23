@@ -29,7 +29,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     @question.survey = @survey
-    
+
     respond_to do |format|
       if @question.save
         format.html { redirect_to survey_questions_url(@survey), notice: 'Question was successfully created.' }
@@ -60,25 +60,29 @@ class QuestionsController < ApplicationController
   # DELETE /questions/1.json
   def destroy
     @survey = @question.survey
-    @question.destroy
     respond_to do |format|
-      format.html { redirect_to survey_questions_url(@survey), notice: 'Question was successfully destroyed.' }
-      format.json { head :no_content }
+      if @question.destroy
+        format.html { redirect_to survey_questions_url(@survey), notice: 'Question was successfully destroyed.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to survey_questions_url(@survey), alert: 'Error when trying to destroy question. Check for dependent records.' }
+        format.json { render json: @question.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_question
-      @question = Question.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_question
+    @question = Question.find(params[:id])
+  end
 
-    def set_survey
-      @survey = Survey.find(params[:survey_id])
-    end
+  def set_survey
+    @survey = Survey.find(params[:survey_id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def question_params
-      params.require(:question).permit(:survey_id, :question_text, :answer_options, :position, :question_type)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def question_params
+    params.require(:question).permit(:survey_id, :question_text, :answer_options, :position, :question_type)
+  end
 end
