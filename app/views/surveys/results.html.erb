@@ -3,17 +3,21 @@
 	<% @survey.questions.each do |question| %>
 		<li class="list-group">
 			<b><%= question.question_text %></b>
-			<ul>
-				<% question.answers.each do |answer| %>
-					<li><%= answer.answer_text %></li>
-				<% end %>
-				<% if question.answers.empty? %>
-					<li><%= t('no_answers') %></li>
-				<% end %>
-			</ul>
+			<br />
+			<% if question.options.any? %>
+				<%= bar_chart get_graph_data(question), get_graph_options %>
+			<% else %>
+				<ul>
+					<% question.answers.each do |answer| %>
+						<% if answer.answer_text.present?  %>
+							<li><%= answer.answer_text %></li>
+						<% end %>
+					<% end %>
+					<% if question.answers.empty? %>
+						<li><%= t('no_answers') %></li>
+					<% end %>
+				</ul>
+			<% end %>
 		</li>
-		<% if question.options.any? %>
-			<%= bar_chart get_graph_data(question), get_graph_options %>
-		<% end %>
 	<% end %>
 </ol>
